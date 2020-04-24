@@ -231,3 +231,7 @@ app.post("/login", function(req, res) {
 app.listen(3000, function() {
     console.log("Server started on port 3000");
 });
+
+// 'https://boiling-anchorage:46886/auth/google/callback'
+// https://boiling-anchorage-46886.herokuapp.com/
+// 'https://<myheroku-app>:<heroku-port-no>/auth/google/callback'
