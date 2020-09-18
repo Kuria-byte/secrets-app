@@ -1,4 +1,5 @@
 //jshint esversion:6
+
 require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -32,15 +33,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/userDB', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-});
+// mongoose.connect('mongodb://localhost:27017/userDB', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+// });
 mongoose.connect("mongodb+srv://admin-ian:34201440@cluster0.yz0bk.mongodb.net/userDB", {
     useNewUrlParser: true,
-    useFindAndModif: true,
+    useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
 });
