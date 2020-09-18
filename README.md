@@ -1,3 +1,8 @@
+# Intro
+![start](https://user-images.githubusercontent.com/61579772/93634517-50864e80-fa23-11ea-9a01-105141a1a10a.jpg)
+![secret](https://user-images.githubusercontent.com/61579772/93634252-deae0500-fa22-11ea-9fcf-bd9e4892fd2b.jpg)
+- live: https://boiling-anchorage-46886.herokuapp.com/
+
 # About
 - Learning user website Authentication
 - Passport strategy for authenticating with ***Facebook and Google using the OAuth 2.0 API.***
@@ -8,17 +13,14 @@
 - Bcrypt,Hashing and salting
 - Hashing using MD5
 - Passport google oauth2
+- Deploying node.js app to Heroku
+- Setting up environment configurations
+- MongoDb databse operations
 
-## Level 2-5
-- Each commit has a different authentication strategy ranging from safe to safest.
-- Pick up where you'd like to start depending on what you'd like to implement.
-
-## Installation
-- $ npm install passport-facebook
-
-### Usage
-- Create an Application
-- Before using passport-facebook/Google, you must register an application with Facebook or Google
+## Version 1
+- Each user can commit one secret under there user.id
+- Secrets submitted stay annonymous
+- User Interface will be updated in *** version 2.0.0.0 ***
 
 ## Configure Strategy
 - The Facebook authentication strategy authenticates users using a Facebook account and OAuth 2.0 tokens.
