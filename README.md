@@ -20,7 +20,7 @@
 ## Version 1
 - Each user can commit one secret under there user.id
 - Secrets submitted stay annonymous
-- User Interface will be updated in *** version 2.0.0.0 ***
+- User Interface will be updated in ***version 2.0.0.0***
 
 ## Configure Strategy
 - The Facebook authentication strategy authenticates users using a Facebook account and OAuth 2.0 tokens.
