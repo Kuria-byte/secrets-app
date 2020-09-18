@@ -33,13 +33,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// mongoose.connect('mongodb://localhost:27017/userDB', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useFindAndModify: false,
-//     useCreateIndex: true
-// });
-mongoose.connect("mongodb+srv://admin-ian:34201440@cluster0.yz0bk.mongodb.net/userDB", {
+mongoose.connect("mongodb+srv://admin-name:12345@cluster0.yuj0bk.mongodb.net/userDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -77,7 +71,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/auth/google/secrets",
+        callbackURL: "http://keepsecret.herokuapp.com/:3000/auth/google/secrets",
         userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 
     },
@@ -94,7 +88,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: "http://localhost:3000/auth/facebook/secrets"
+        callbackURL: "http://keepsecret.herokuapp.com/:3000/auth/facebook/secrets"
 
     },
     function(accessToken, refreshToken, profile, done) {
