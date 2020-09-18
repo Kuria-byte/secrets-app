@@ -28,7 +28,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-//initializa passport and use it to manage sessions
+//initialize passport and use it to manage sessions
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -38,6 +38,13 @@ mongoose.connect('mongodb://localhost:27017/userDB', {
     useFindAndModify: false,
     useCreateIndex: true
 });
+mongoose.connect("mongodb+srv://admin-ian:34201440@cluster0.yz0bk.mongodb.net/userDB", {
+    useNewUrlParser: true,
+    useFindAndModif: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
+
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -178,13 +185,13 @@ app.post("/submit", function(req, res) {
     const userId = req.user._id;
 
     //Once the user is authenticated and their session gets saved, their user details are saved to req.user.
-    user.findById(userId, function(err, foundUser) {
+    user.findById(userId, (err, foundUser) => {
         if (err) {
             console.log(err);
         } else {
             if (foundUser) {
                 foundUser.secret = submittedSecret;
-                foundUser.save(function() {
+                foundUser.save(()=> {
                     res.redirect("/secrets");
                 });
             }
@@ -228,10 +235,16 @@ app.post("/login", function(req, res) {
 
 });
 
-app.listen(3000, function() {
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+app.listen(port, function() {
     console.log("Server started on port 3000");
+    
 });
 
-// 'https://boiling-anchorage:46886/auth/google/callback'
+
+// node
 // https://boiling-anchorage-46886.herokuapp.com/
 // 'https://<myheroku-app>:<heroku-port-no>/auth/google/callback'
